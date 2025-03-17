@@ -19,7 +19,10 @@
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            if (username === 'b' && password === 'b') {
+            const obfuscatedUsername = 'Yg=='; // 'b' in base64
+            const obfuscatedPassword = 'Yg=='; // 'b' in base64
+
+            if (btoa(username) === obfuscatedUsername && btoa(password) === obfuscatedPassword) {
                 document.getElementById('loginForm').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
             } else {
